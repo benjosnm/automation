@@ -1,5 +1,6 @@
 package net.automation.practice.task;
 
+import net.automation.practice.interactions.Refresh;
 import net.automation.practice.resources.ApplicationHomePage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -32,6 +33,9 @@ public class Start implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(Open.browserOn().the(applicationHomePage));
+        actor.attemptsTo(
+                Open.browserOn().the(applicationHomePage),
+                Refresh.theBrowserSession()
+        );
     }
 }
