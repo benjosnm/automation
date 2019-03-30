@@ -36,8 +36,8 @@ public class Start implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Open.browserOn().the(applicationHomePage),
-                Refresh.theBrowserSession(),
-                Check.whether(items.isEmpty()).otherwise()
+                Refresh.theBrowserSession()
+                //,Check.whether(items.isEmpty()).otherwise()
         );
     }
 }
